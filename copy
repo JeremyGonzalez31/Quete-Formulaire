@@ -1,0 +1,62 @@
+form.php
+
+
+<form  action="thanks.php"  method="post">
+    
+    <div>
+      <label  for="nom">Nom :</label>
+      <input  type="text"  id="nom"  name="nom">
+    </div>
+    <div>
+      <label  for="prenom">Prénom :</label>
+      <input  type="text"  id="prenom"  name="prenom">
+    </div>
+    <div>
+      <label  for="tel">Numéro de tel :</label>
+      <input  type="tel"  id="tel"  name="tel">
+    </div>
+    <div>
+      <label  for="email">Courriel :</label>
+        <input  type="email"  id="email"  name="email">
+    </div>
+    <div>
+      <label  for="liste">Faites un choix :</label>
+      <select id="liste" name="liste"> 
+        <option value="bonjour">Bonjour</option>
+        <option value="bienvenue">Bienvenue</option>
+        <option value="au_revoir">Au revoir</option>
+      </select>
+    </div>
+    <div>
+      <label  for="message">Message :</label>
+      <textarea  id="message"  name="message"></textarea>
+    </div>
+    <div  class="button">
+      <button  type="submit">Envoyer votre message</button>
+    </div>
+  </form>
+
+  <?php
+  echo  $_POST['user_name'];
+?>
+
+
+
+
+<?php
+
+$prenom = $_POST["prenom"];
+$nom = $_POST["nom"];
+$sujet = $_POST["liste"];
+$tel = $_POST["tel"];
+$mail = $_POST["email"];
+$message = $_POST["message"];
+
+?>
+
+
+<p>Merci <?php echo $prenom ?> <?php echo $nom ?> de nous avoir contacté à propos de <?php echo $sujet ?>.
+
+Un de nos conseillers vous contactera soit à l’adresse <?php echo $mail ?> ou par téléphone au <?php echo $tel ?> dans les plus brefs délais pour traiter votre demande : 
+
+<?php echo $message ?> </p>
